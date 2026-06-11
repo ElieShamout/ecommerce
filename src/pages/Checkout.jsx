@@ -8,6 +8,8 @@ function Checkout() {
   const totalPrice = totalBeforeTax + estimatedTax;
   return (
     <>
+    <title>Ecommerce - Checkout</title>
+
       <div className="py-10">
         <h2 className="text-2xl font-semibold mb-5">Review your order</h2>
 

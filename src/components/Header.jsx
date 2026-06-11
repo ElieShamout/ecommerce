@@ -1,11 +1,14 @@
+import { Link } from "react-router";
 export function Header() {
   return (
     <>
       <header className="bg-slate-700 w-full py-2 flex items-center justify-between px-10 gap-10">
-        <h1 className="text-3xl font-semibold text-white">
-          <span className="md:block hidden">Ecommerce</span>
-          <span className="md:hidden block">EC</span>
-        </h1>
+        <Link to="/">
+          <h1 className="text-3xl font-semibold text-white">
+            <span className="md:block hidden">Ecommerce</span>
+            <span className="md:hidden block">EC</span>
+          </h1>
+        </Link>
         <div className="flex items-center justify-between gap-2 relative overflow-hidden rounded">
           <input
             type="search"
@@ -21,8 +24,12 @@ export function Header() {
         </div>
         <div className="text-white font-semibold text-xl">
           <ul className="flex items-center gap-2 text-sm">
-            <li className="hover:text-green-300 duration-200"><a href="">Checkout</a></li>
-            <li className="hover:text-green-300 duration-200"><a href="">Orders</a></li>
+            <li className="hover:text-green-300 duration-200">
+              <Link to="checkout">Checkout</Link>
+            </li>
+            <li className="hover:text-green-300 duration-200">
+              <Link to="orders">Orders</Link>
+            </li>
           </ul>
         </div>
       </header>

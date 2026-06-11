@@ -3,6 +3,8 @@ function Checkout() {
   const total = 249;
   return (
     <>
+    <title>Ecommerce - Orders</title>
+
       <div className="py-10">
         <h2 className="text-2xl font-semibold mb-5">Your Orders</h2>
 

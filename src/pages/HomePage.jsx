@@ -4,6 +4,8 @@ import { Product } from "../components/Product";
 function HomePage() {
   return (
     <>
+    <title>Ecommerce</title>
+
       <HomePageFilters />
       <div className="py-10 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-5">
         <Product
