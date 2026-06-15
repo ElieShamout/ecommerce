@@ -1,9 +1,14 @@
+import axios from "axios";
 import { HomePageFilters } from "../components/HomePageFilters";
 import { Product } from "../components/Product";
 import { products } from "../data/products";
 
 function HomePage() {
-  console.log(products);
+  axios.get("http://localhost:3000/api/products").then(
+    (response) => {
+        console.log(response.data);
+    },
+  );
 
   return (
     <>
@@ -16,7 +21,7 @@ function HomePage() {
               key={product.id}
               imageUrl={product.image}
               title={product.name}
-              rating={ product.rating }
+              rating={product.rating}
               price={product.price}
             />
           );
