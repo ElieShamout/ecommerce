@@ -2,7 +2,7 @@ import { Link } from "react-router";
 export function Header() {
   return (
     <>
-      <header className="bg-slate-700 w-full py-2 flex items-center justify-between px-10 gap-10">
+      <header className="bg-slate-700 w-full py-2 flex items-center justify-between px-10 gap-10 sticky top-0 z-50">
         <Link to="/">
           <h1 className="text-3xl font-semibold text-white">
             <span className="md:block hidden">Ecommerce</span>
