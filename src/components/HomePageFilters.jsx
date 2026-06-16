@@ -2,8 +2,8 @@ export function HomePageFilters() {
   return (
     <>
       <div className="flex md:flex-row flex-col items-center gap-2">
-        <select className="rounded border p-2 border-gray-300 focus:outline-0 w-full">
-          <option disabled selected>Select Product Type</option>
+        <select className="rounded border p-2 border-gray-300 focus:outline-0 w-full" defaultValue="">
+          <option disabled value="">Select Product Type</option>
           <option value="kleidung">Kleidung</option>
           <option value="smatphone">Smatphone</option>
         </select>
@@ -22,8 +22,8 @@ export function HomePageFilters() {
             min="1"
           />
         </div>
-        <select className="rounded border p-2 border-gray-300 focus:outline-0 w-full">
-          <option disabled selected>Select Size</option>
+        <select className="rounded border p-2 border-gray-300 focus:outline-0 w-full" defaultValue="">
+          <option disabled value="">Select Size</option>
         </select>
         <button className="rounded p-2 bg-green-300 hover:bg-green-400 duration-200 cursor-pointer text-white font-semibold md:w-16 w-full">Apply</button>
       </div>

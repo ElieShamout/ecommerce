@@ -32,8 +32,8 @@ export function Header({ cart }) {
         <div className="text-white font-semibold text-xl">
           <ul className="flex items-center gap-5 text-sm">
             <li className="hover:text-green-300 duration-200">
-              <Link to="Cart" className="relative">
-                <span className="absolute left-2.5 top-2 text-[10px] rounded-full text-white w-4 h-4 flex items-center justify-center">{ totalCartQuantity + 11 }</span>
+              <Link to="Checkout" className="relative">
+                <span className="absolute left-2.5 top-2 text-[10px] rounded-full text-white w-4 h-4 flex items-center justify-center">{ totalCartQuantity }</span>
                 <SlBasket className="text-3xl"/>
               </Link>
             </li>

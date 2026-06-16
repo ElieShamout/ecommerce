@@ -1,27 +1,28 @@
 import { CheckoutProduct } from "../components/CheckoutProduct";
 
-function Checkout() {
-  const productsPrice = 150;
-  const shipping = 4.99;
-  const totalBeforeTax = productsPrice + shipping;
-  const estimatedTax = productsPrice * 0.1;
-  const totalPrice = totalBeforeTax + estimatedTax;
+function Checkout({ cart }) {
+  let productsPrice = 0;
+  cart.map((item) => {
+    productsPrice += item.quantity * (item.product.priceCents / 100);
+  });
+  let shipping = 4.99;
+  let totalBeforeTax = productsPrice + shipping;
+  let estimatedTax = productsPrice * 0.1;
+  let totalPrice = totalBeforeTax + estimatedTax;
   return (
     <>
-    <title>Ecommerce - Checkout</title>
+      <title>Ecommerce - Checkout</title>
 
       <div className="py-10">
         <h2 className="text-2xl font-semibold mb-5">Review your order</h2>
 
         <div className="flex lg:flex-row flex-col items-top justify-between gap-10">
           <div className="w-full">
-            <CheckoutProduct />
-            <CheckoutProduct />
-            <CheckoutProduct />
-            <CheckoutProduct />
-            <CheckoutProduct />
+            {cart.map((item) => {
+              return <CheckoutProduct key={item.id} item={item} />;
+            })}
           </div>
-          <div className="border-gray-200 border rounded p-3 lg:w-2xl w-full sticky top-10 h-fit">
+          <div className="border-gray-200 border rounded p-3 lg:w-2xl w-full sticky top-20 h-fit">
             <h2 className="font-semibold mb-5">Payment Summary</h2>
             <ul className="w-full text-sm flex flex-col gap-1.5">
               <li className="flex items-center justify-between">
@@ -55,4 +56,3 @@ function Checkout() {
 }
 
 export default Checkout;
-
