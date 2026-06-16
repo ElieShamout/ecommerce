@@ -5,7 +5,7 @@ export function Product({ key, imageUrl, title, rating, price }) {
     <>
       <div key={key} className="p-5 rounded border border-gray-200 flex flex-col gap-5 min-w-0">
         <div className="overflow-hidden rounded">
-          <img className="w-full h-full" src={imageUrl} alt="" />
+          <img className="w-full h-full" src={imageUrl}/>
         </div>
 
         <h3 className="font-semibold truncate">{title}</h3>
@@ -18,7 +18,7 @@ export function Product({ key, imageUrl, title, rating, price }) {
           <p className="font-semibold text-xs">{ rating.count }</p>
         </div>
 
-        <h1 className="font-semibold">${ price.toFixed(2) }</h1>
+        <h1 className="font-semibold">${ (price / 100).toFixed(2) }</h1>
 
         <div className="flex gap-2 items-center justify-between">
           <select className="border-gray-200 border focus:outline-0 w-16 rounded p-1 text-sm">

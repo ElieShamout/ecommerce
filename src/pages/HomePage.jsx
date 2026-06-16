@@ -1,14 +1,17 @@
 import axios from "axios";
+import { useEffect, useState } from "react";
 import { HomePageFilters } from "../components/HomePageFilters";
 import { Product } from "../components/Product";
-import { products } from "../data/products";
 
 function HomePage() {
-  axios.get("http://localhost:3000/api/products").then(
-    (response) => {
-        console.log(response.data);
-    },
-  );
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    axios.get("/api/products").then((response) => {
+      setProducts(response.data);
+    });
+
+
+  }, []);
 
   return (
     <>
@@ -22,7 +25,7 @@ function HomePage() {
               imageUrl={product.image}
               title={product.name}
               rating={product.rating}
-              price={product.price}
+              price={product.priceCents}
             />
           );
         })}
